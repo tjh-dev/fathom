@@ -1,0 +1,25 @@
+{
+	"name": "remix-fathom",
+	"version": "0.1.0",
+	"description": "",
+	"scripts": {
+		"format": "prettier --write package.json tsconfig.json src/",
+		"typecheck": "tsc"
+	},
+	"author": "tjh-dev",
+	"devDependencies": {
+		"@types/react": "^18",
+		"eslint": "^8.44",
+		"prettier": "^3.0.0",
+		"typescript": "^5"
+	},
+	"dependencies": {
+		"@remix-run/react": "^1.18",
+		"react": "^18"
+	},
+	"prettier": {
+		"bracketSameLine": true,
+		"useTabs": true,
+		"trailingComma": "es5"
+	}
+}
