@@ -1,4 +1,7 @@
-export function useGoal(code) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useGoal = void 0;
+function useGoal(code) {
     return function (value) {
         if (value === void 0) { value = 0; }
         if (typeof document === "undefined") {
@@ -12,3 +15,4 @@ export function useGoal(code) {
         window.fathom.trackGoal(code, value);
     };
 }
+exports.useGoal = useGoal;

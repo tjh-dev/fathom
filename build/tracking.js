@@ -1,4 +1,7 @@
-export function disableTracking() {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.enableTracking = exports.disableTracking = void 0;
+function disableTracking() {
     if (typeof document === "undefined") {
         console.error("cannot disable tracking during ssr");
         return;
@@ -9,7 +12,8 @@ export function disableTracking() {
     }
     window.fathom.blockTrackingForMe();
 }
-export function enableTracking() {
+exports.disableTracking = disableTracking;
+function enableTracking() {
     if (typeof document === "undefined") {
         console.error("cannot enable tracking during ssr");
         return;
@@ -20,3 +24,4 @@ export function enableTracking() {
     }
     window.fathom.enableTrackingForMe();
 }
+exports.enableTracking = enableTracking;

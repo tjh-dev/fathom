@@ -3,7 +3,7 @@
 	"exclude": ["node_modules"],
 	"compilerOptions": {
 		"esModuleInterop": true,
-		"module": "ESNext",
+		"module": "commonjs",
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
 		"jsx": "react",
