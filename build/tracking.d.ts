@@ -1,2 +1,6 @@
-export declare function disableTracking(): void;
-export declare function enableTracking(): void;
+type Options = {
+    quietly: boolean;
+};
+export declare function disableTracking(options?: Options): void;
+export declare function enableTracking(options?: Options): void;
+export {};
