@@ -2,7 +2,9 @@
 	"name": "@tjh-dev/remix-fathom",
 	"version": "0.1.0",
 	"description": "",
+	"main": "build/index.js",
 	"scripts": {
+		"build": "tsc --esModuleInterop -d src/index.ts --outDir build",
 		"format": "prettier --write package.json tsconfig.json src/",
 		"typecheck": "tsc"
 	},

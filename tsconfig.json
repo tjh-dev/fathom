@@ -15,6 +15,6 @@
 		"paths": {
 			"~/*": ["./app/*"]
 		},
-		"noEmit": true
+		"skipLibCheck": true
 	}
 }
