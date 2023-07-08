@@ -1,8 +1,6 @@
 export declare const fathomDomain = "https://cdn.usefathom.com";
 export declare const fathomScript: string;
 export { Fathom } from "./fathom";
-export { useGoal } from "./use-goal";
-export { disableTracking, enableTracking } from "./tracking";
 interface FathomClient {
     blockTrackingForMe: () => void;
     enableTrackingForMe: () => void;
@@ -18,3 +16,9 @@ declare global {
         fathom?: FathomClient;
     }
 }
+type Options = {
+    quietly: boolean;
+};
+export declare function disableTracking(options?: Options): void;
+export declare function enableTracking(options?: Options): void;
+export declare function useGoal(code: string): (value?: number) => void;
