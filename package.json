@@ -1,7 +1,6 @@
 {
-	"name": "@tjh-dev/remix-fathom",
+	"name": "@tjh-dev/fathom",
 	"version": "0.2.0",
-	"description": "",
 	"main": "build/index.js",
 	"scripts": {
 		"build": "tsc",
@@ -25,5 +24,16 @@
 		"bracketSameLine": true,
 		"useTabs": true,
 		"trailingComma": "es5"
-	}
+	},
+	"types": "./build/index.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/tjh-dev/fathom.git"
+	},
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/tjh-dev/fathom/issues"
+	},
+	"homepage": "https://github.com/tjh-dev/fathom#readme",
+	"description": ""
 }
