@@ -20,11 +20,7 @@ export type FathomScriptProps = {
      * Set to "false" to override the default behaviour.
      */
     auto?: boolean;
-    /**
-     * Override the script URL.
-     */
-    scriptUrl?: string;
 };
-declare function FathomScript({ site, exclude, canonical, auto, scriptUrl, }: FathomScriptProps): JSX.Element;
+declare function FathomScript({ site, exclude, canonical, auto }: FathomScriptProps): JSX.Element;
 export declare const Fathom: React.MemoExoticComponent<typeof FathomScript>;
 export {};

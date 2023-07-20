@@ -22,22 +22,12 @@ export type FathomScriptProps = {
 	 * Set to "false" to override the default behaviour.
 	 */
 	auto?: boolean;
-	/**
-	 * Override the script URL.
-	 */
-	scriptUrl?: string;
 };
 
-function FathomScript({
-	site,
-	exclude,
-	canonical,
-	auto,
-	scriptUrl,
-}: FathomScriptProps) {
+function FathomScript({ site, exclude, canonical, auto }: FathomScriptProps) {
 	return (
 		<script
-			src={scriptUrl ?? fathomScript}
+			src={fathomScript}
 			data-site={site}
 			data-excluded-domains={exclude?.map((domain) => domain.trim()).join(",")}
 			data-canonical={canonical}
