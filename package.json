@@ -17,7 +17,6 @@
 		"typescript": "^5"
 	},
 	"dependencies": {
-		"@remix-run/react": "^1.18",
 		"react": "^18"
 	},
 	"prettier": {
