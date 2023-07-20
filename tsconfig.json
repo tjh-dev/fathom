@@ -1,5 +1,5 @@
 {
-	"include": ["src/index.ts", "src/fathom.tsx", "src/use-goal.ts"],
+	"include": ["src/index.ts", "src/fathom.tsx"],
 	"exclude": ["node_modules"],
 	"compilerOptions": {
 		"esModuleInterop": true,
