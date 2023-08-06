@@ -1,7 +1,10 @@
 {
 	"name": "@tjh-dev/fathom",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"main": "build/index.js",
+	"files": [
+		"build/*"
+	],
 	"scripts": {
 		"build": "tsc",
 		"format": "prettier --write package.json tsconfig.json src/"
