@@ -7,19 +7,18 @@ Add the tracking component to your root route.
 import { Fathom } from "@tjh-dev/fathom";
 
 export default function Root() {
-	return (
-		<html>
-			<head>
-				...
-				<Fathom site="SITE_ID" />
-				<Meta />
-			</head>
-			<body>
-				<Outlet />
-				<Scripts />
-			</body>
-		</html>
-	);
+  return (
+    <html>
+      <head>
+        <Fathom site="SITE_ID" />
+        <Meta />
+      </head>
+      <body>
+        <Outlet />
+        <Scripts />
+      </body>
+    </html>
+  );
 }
 ```
 
