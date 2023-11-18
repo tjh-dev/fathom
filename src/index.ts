@@ -3,11 +3,17 @@ export const fathomScript = fathomDomain + "/script.js";
 
 export { Fathom } from "./fathom";
 
+interface EventPayload {
+	_site_id?: string;
+	_value?: number;
+}
+
 interface FathomClient {
 	blockTrackingForMe: () => void;
 	enableTrackingForMe: () => void;
 	trackPageview: (opts?: { url?: string; referrer?: string }) => void;
 	trackGoal: (code: string, cents: number) => void;
+	trackEvent: (name: string, payload?: EventPayload) => void;
 	setSite: (id: string) => void;
 }
 
@@ -55,16 +61,32 @@ export function enableTracking(options?: Options) {
 	}
 }
 
-export function useGoal(code: string) {
-	return function (value: number = 0) {
+export function useGoal(code: string, defaultValue: number = 0) {
+	return function (value: number | undefined = undefined) {
 		if (typeof document === "undefined") {
-			console.error(`cannot track event '${code}' during ssr`);
+			console.error(`cannot track goal '${code}' during ssr`);
 			return;
 		}
 		if (typeof window.fathom === "undefined") {
-			console.warn(`Fathom analytics not loaded. Cannot track event '${code}'`);
+			console.warn(`Fathom analytics not loaded. Cannot track goal '${code}'`);
 			return;
 		}
-		window.fathom.trackGoal(code, value);
+
+		window.fathom.trackGoal(code, value ?? defaultValue);
+	};
+}
+
+export function useTrackEvent(name: string, defaultPayload?: EventPayload) {
+	return function (payload?: EventPayload) {
+		if (typeof document === "undefined") {
+			console.error(`cannot track event '${name}' during ssr`);
+			return;
+		}
+		if (typeof window.fathom === "undefined") {
+			console.warn(`Fathom analytics not loaded. Cannot track event '${name}'`);
+			return;
+		}
+
+		window.fathom.trackEvent(name, payload ?? defaultPayload);
 	};
 }
